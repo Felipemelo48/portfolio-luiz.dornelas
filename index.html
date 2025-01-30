@@ -1,55 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à Página Principal</h1>
-        <a href="/logout">Sair</a>
+        <h1>Luiz Felipe Dornelas</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section id="section1">
-            <h2>Método de Invasão 1</h2>
-            <p>Descrição do método de invasão 1...</p>
-        </section>
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Sou estudante de Sistemas de Informação e apaixonado por tecnologia. Atualmente, desenvolvo projetos com React, Django e Firebase.</p>
+    </section>
 
-        <section id="section2">
-            <h2>Método de Invasão 2</h2>
-            <p>Descrição do método de invasão 2...</p>
-        </section>
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>React.js</li>
+            <li>JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>Python & Django</li>
+            <li>Banco de Dados</li>
+        </ul>
+    </section>
 
-        <section id="section3">
-            <h2>Método de Invasão 3</h2>
-            <p>Descrição do método de invasão 3...</p>
-        </section>
+    <section id="projetos">
+        <h2>Projetos</h2>
+        <div class="projeto">
+            <h3>Planner Digital</h3>
+            <p>Aplicação desenvolvida com React e Firebase para organização pessoal.</p>
+        </div>
+        <div class="projeto">
+            <h3>App de Dieta</h3>
+            <p>Aplicação para controle alimentar utilizando React e Java.</p>
+        </div>
+    </section>
 
-        <section id="section4">
-            <h2>Método de Invasão 4</h2>
-            <p>Descrição do método de invasão 4...</p>
-        </section>
-    </main>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:luizfelipe@email.com">luizfelipe@email.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank">Meu LinkedIn</a></p>
+    </section>
 
-    <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const response = await fetch('/auth/check-session');
-                const data = await response.json();
+    <footer>
+        <p>&copy; 2025 Luiz Felipe Dornelas - Todos os direitos reservados.</p>
+    </footer>
 
-                if (!data.authenticated) {
-                    // Se não estiver autenticado, redirecionar para a página de login
-                    window.location.href = '/auth/login';
-                }
-            } catch (error) {
-                console.error('Erro ao verificar sessão:', error.message);
-                alert('Erro ao verificar sessão. Tente novamente mais tarde.');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
