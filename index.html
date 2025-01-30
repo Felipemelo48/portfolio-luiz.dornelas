@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Página Principal</h1>
+        <a href="/logout">Sair</a>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Método de Invasão 1</h2>
+            <p>Descrição do método de invasão 1...</p>
+        </section>
+
+        <section id="section2">
+            <h2>Método de Invasão 2</h2>
+            <p>Descrição do método de invasão 2...</p>
+        </section>
+
+        <section id="section3">
+            <h2>Método de Invasão 3</h2>
+            <p>Descrição do método de invasão 3...</p>
+        </section>
+
+        <section id="section4">
+            <h2>Método de Invasão 4</h2>
+            <p>Descrição do método de invasão 4...</p>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/auth/check-session');
+                const data = await response.json();
+
+                if (!data.authenticated) {
+                    // Se não estiver autenticado, redirecionar para a página de login
+                    window.location.href = '/auth/login';
+                }
+            } catch (error) {
+                console.error('Erro ao verificar sessão:', error.message);
+                alert('Erro ao verificar sessão. Tente novamente mais tarde.');
+            }
+        });
+    </script>
+</body>
+</html>
