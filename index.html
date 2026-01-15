@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Meta Tags para SEO e Compartilhamento -->
+    <!-- SEO -->
     <title>Luiz Felipe Dornelas | Desenvolvedor Full-Stack</title>
-    <meta name="description" content="Portfólio de Luiz Felipe Dornelas. Desenvolvedor Full-Stack criando soluções web com React, Django, Python e Salesforce.">
+    <meta name="description" content="Portfólio de Luiz Felipe Dornelas - Desenvolvedor Full-Stack com React, Django, Python e Salesforce. Confira meus projetos e habilidades.">
     <meta name="keywords" content="desenvolvedor, fullstack, react, django, python, salesforce, portfólio, programador">
     
-    <!-- Fontes Google (Poppins para títulos, Inter para texto) -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Link para o CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Link para o JavaScript (com defer para carregar após o HTML) -->
+    <!-- JavaScript -->
     <script src="script.js" defer></script>
     
-    <!-- Favicon (adicione um arquivo favicon.ico na raiz do projeto depois) -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 </head>
 <body>
-    <!-- Cabeçalho / Navegação -->
+    <!-- Cabeçalho -->
     <header class="cabecalho">
-        <nav class="cabecalho__nav">
-            <!-- Logo com seu nome -->
+        <nav class="cabecalho__nav container">
+            <!-- Logo -->
             <a href="#inicio" class="cabecalho__logo">Luiz<span>Felipe</span></a>
             
-            <!-- Menu de Navegação Principal -->
+            <!-- Menu Desktop -->
             <ul class="cabecalho__menu">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
@@ -40,14 +40,25 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
             
-            <!-- Botão para Modo Escuro/Claro (será ativado no JS depois) -->
-            <button class="botao-tema" aria-label="Alternar modo claro/escuro">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            <!-- Botão Tema -->
+            <button class="botao-tema" aria-label="Alternar modo claro/escuro" title="Alternar tema">
+                <svg class="lua" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="sol" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </button>
 
-            <!-- Botão do Menu Mobile (aparece apenas em telas pequenas) -->
+            <!-- Menu Mobile -->
             <button class="cabecalho__botao-menu" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -57,65 +68,85 @@
     </header>
 
     <main>
-        <!-- Seção Hero / Início -->
-        <section id="inicio" class="hero">
+        <!-- Seção Hero -->
+        <section id="inicio" class="hero container">
             <div class="hero__conteudo">
-                <h1 class="hero__titulo">Transformando ideias em <span class="destaque">soluções digitais</span></h1>
-                <p class="hero__subtitulo">Desenvolvedor Full-Stack com expertise em <strong>React</strong>, <strong>Django</strong> e agora expandindo para o ecossistema <strong>Salesforce</strong>.</p>
+                <h1 class="hero__titulo">
+                    Transformando ideias em <span class="destaque digitar">soluções digitais</span>
+                </h1>
+                <p class="hero__subtitulo">
+                    Desenvolvedor Full-Stack com foco em <strong>React</strong>, <strong>Django</strong> e integração com <strong>Salesforce</strong>.
+                </p>
                 <div class="hero__botoes">
-                    <a href="#projetos" class="botao botao--primario">Ver Meus Projetos</a>
-                    <a href="#contato" class="botao botao--secundario">Entrar em Contato</a>
+                    <a href="#projetos" class="botao botao--primario">Ver Projetos</a>
+                    <a href="#contato" class="botao botao--secundario">Contato</a>
                 </div>
             </div>
             <div class="hero__ilustracao">
-                <!-- Você pode colocar uma imagem sua ou um SVG aqui depois -->
-                <div class="ilustracao-placeholder"></div>
+                <div class="hero__circulo">
+                    <div class="hero__codigo">
+                        <span>{</span>
+                        <span>code</span>
+                        <span>}</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Sobre -->
         <section id="sobre" class="secao secao--clara">
-            <h2 class="secao__titulo">Sobre Mim</h2>
-            <div class="sobre__conteudo">
-                <div class="sobre__texto">
-                    <p>Olá! Sou o Luiz, um desenvolvedor apaixonado por resolver problemas através da tecnologia. Minha jornada começou com o desenvolvimento web tradicional (HTML, CSS, JS) e evoluiu para o desenvolvimento full-stack com <strong>React no front-end</strong> e <strong>Django/Python no back-end</strong>.</p>
-                    <p>Atualmente, estou expandindo meu conhecimento para o ecossistema <strong>Salesforce</strong>, completando a certificação de Administrador/Analista. Acredito que a combinação de habilidades de desenvolvimento com a compreensão da principal plataforma de CRM do mundo abre portas para criar soluções empresariais integradas e de alto impacto.</p>
-                    <p>Meu objetivo é construir aplicações que não apenas funcionem bem, mas que também entreguem uma experiência excepcional ao usuário e resolvam necessidades reais de negócio.</p>
+            <div class="container">
+                <h2 class="secao__titulo">Sobre Mim</h2>
+                <div class="sobre__conteudo">
+                    <div class="sobre__texto">
+                        <p>Olá! Sou o Luiz, desenvolvedor apaixonado por criar soluções tecnológicas que resolvem problemas reais. Minha jornada começou com desenvolvimento web tradicional e evoluiu para o stack completo com <strong>React no front-end</strong> e <strong>Django/Python no back-end</strong>.</p>
+                        <p>Atualmente, estou expandindo minha expertise para o ecossistema <strong>Salesforce</strong>, completando a certificação de Administrador/Analista. Acredito que a combinação de desenvolvimento com a principal plataforma de CRM do mercado é poderosa para criar soluções empresariais integradas.</p>
+                        <p>Meu objetivo é construir aplicações que não apenas funcionem perfeitamente, mas que também ofereçam uma experiência excepcional ao usuário final.</p>
+                    </div>
+                    <div class="sobre__imagem">
+                        <div class="sobre__avatar">
+                            <div class="sobre__avatar-inner">LF</div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Espaço reservado para uma foto sua futuramente -->
-                <div class="sobre__foto-placeholder"></div>
             </div>
         </section>
 
         <!-- Seção Habilidades -->
         <section id="habilidades" class="secao">
-            <h2 class="secao__titulo">Habilidades & Tecnologias</h2>
-            <div class="habilidades__container">
-                <div class="habilidade-categoria">
-                    <h3>Front-End</h3>
-                    <div class="habilidade-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag tag--destaque">React.js</span>
-                        <span class="tag">Responsive Design</span>
+            <div class="container">
+                <h2 class="secao__titulo">Habilidades & Tecnologias</h2>
+                <div class="habilidades__grid">
+                    <div class="habilidade-categoria">
+                        <h3>Front-End</h3>
+                        <div class="habilidade-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag tag--destaque">React.js</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
                     </div>
-                </div>
-                <div class="habilidade-categoria">
-                    <h3>Back-End & Banco de Dados</h3>
-                    <div class="habilidade-tags">
-                        <span class="tag tag--destaque">Python</span>
-                        <span class="tag tag--destaque">Django</span>
-                        <span class="tag">API REST</span>
-                        <span class="tag">SQL</span>
+                    
+                    <div class="habilidade-categoria">
+                        <h3>Back-End & Banco de Dados</h3>
+                        <div class="habilidade-tags">
+                            <span class="tag tag--destaque">Python</span>
+                            <span class="tag tag--destaque">Django</span>
+                            <span class="tag">API REST</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
                     </div>
-                </div>
-                <div class="habilidade-categoria">
-                    <h3>Plataformas & Ferramentas</h3>
-                    <div class="habilidade-tags">
-                        <span class="tag tag--nova">Salesforce</span>
-                        <span class="tag">Git & GitHub</span>
-                        <span class="tag">Figma (Básico)</span>
+                    
+                    <div class="habilidade-categoria">
+                        <h3>Plataformas & Ferramentas</h3>
+                        <div class="habilidade-tags">
+                            <span class="tag tag--nova">Salesforce</span>
+                            <span class="tag">Git & GitHub</span>
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Figma</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,176 +154,232 @@
 
         <!-- Seção Projetos -->
         <section id="projetos" class="secao secao--clara">
-            <h2 class="secao__titulo">Projetos em Destaque</h2>
-            <p class="secao__subtitulo">Uma seleção do meu trabalho prático. Clique em qualquer card para ver mais detalhes.</p>
+            <div class="container">
+                <h2 class="secao__titulo">Projetos em Destaque</h2>
+                <p class="secao__subtitulo">Conheça alguns dos meus trabalhos práticos</p>
 
-            <!-- Filtros de Tecnologia (serão ativados com JS depois) -->
-            <div class="filtros">
-                <button class="filtro filtro--ativo" data-filtro="todos">Todos</button>
-                <button class="filtro" data-filtro="react">React</button>
-                <button class="filtro" data-filtro="django">Django</button>
-                <button class="filtro" data-filtro="salesforce">Salesforce</button>
-            </div>
+                <!-- Filtros -->
+                <div class="filtros">
+                    <button class="filtro filtro--ativo" data-filtro="todos">Todos</button>
+                    <button class="filtro" data-filtro="react">React</button>
+                    <button class="filtro" data-filtro="django">Django</button>
+                    <button class="filtro" data-filtro="salesforce">Salesforce</button>
+                </div>
 
-            <div class="projetos__grid">
-                <!-- PROJETO 1: Placeholder para seu projeto React/Django -->
-                <article class="projeto-card" data-categorias="react django">
-                    <div class="projeto-card__imagem-placeholder projeto1"></div>
-                    <div class="projeto-card__conteudo">
-                        <h3 class="projeto-card__titulo">Sistema de Gerenciamento</h3>
-                        <p class="projeto-card__descricao">Aplicaçao full-stack com interface em React e API robusta em Django para gerenciar dados de forma eficiente.</p>
-                        <div class="projeto-card__tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">SQLite</span>
+                <!-- Grid de Projetos -->
+                <div class="projetos__grid">
+                    <!-- Projeto 1 -->
+                    <article class="projeto-card" data-categorias="react django">
+                        <div class="projeto-card__imagem projeto1">
+                            <div class="projeto-card__overlay">
+                                <span>Ver Detalhes</span>
+                            </div>
                         </div>
-                        <div class="projeto-card__links">
-                            <a href="#" class="link-icon" aria-label="Ver demonstração ao vivo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>
-                                Live Demo
-                            </a>
-                            <a href="#" class="link-icon" aria-label="Ver código no GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
-                                Código
-                            </a>
+                        <div class="projeto-card__conteudo">
+                            <h3 class="projeto-card__titulo">Sistema de Gerenciamento</h3>
+                            <p class="projeto-card__descricao">Aplicação full-stack com interface em React e API robusta em Django para gerenciamento de dados com autenticação de usuários.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">REST API</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <div class="projeto-card__links">
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver demonstração ao vivo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Demo
+                                </a>
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver código no GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    Código
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- PROJETO 2: Placeholder para um Projeto Integrado com Salesforce -->
-                <article class="projeto-card" data-categorias="salesforce">
-                    <div class="projeto-card__imagem-placeholder projeto2"></div>
-                    <div class="projeto-card__conteudo">
-                        <h3 class="projeto-card__titulo">Integração Salesforce + Dashboard</h3>
-                        <p class="projeto-card__descricao">Dashboard conceitual que consome dados de uma API do Salesforce para visualizar métricas de CRM, demonstrando a integração entre sistemas.</p>
-                        <div class="projeto-card__tags">
-                            <span class="tag tag--nova">Salesforce</span>
-                            <span class="tag">React</span>
-                            <span class="tag">REST API</span>
-                            <span class="tag">Apex</span>
+                    <!-- Projeto 2 - Salesforce -->
+                    <article class="projeto-card" data-categorias="salesforce">
+                        <div class="projeto-card__imagem projeto2">
+                            <div class="projeto-card__overlay">
+                                <span>Ver Detalhes</span>
+                            </div>
                         </div>
-                        <div class="projeto-card__links">
-                            <a href="#" class="link-icon" aria-label="Ver estudo de caso">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/><path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/></svg>
-                                Estudo de Caso
-                            </a>
-                            <a href="#" class="link-icon" aria-label="Ver conceito no GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
-                                Conceito
-                            </a>
+                        <div class="projeto-card__conteudo">
+                            <h3 class="projeto-card__titulo">Integração Salesforce</h3>
+                            <p class="projeto-card__descricao">Dashboard conceitual que consome dados da API do Salesforce para visualização de métricas de CRM e relatórios personalizados.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag tag--nova">Salesforce</span>
+                                <span class="tag">React</span>
+                                <span class="tag">API Integration</span>
+                                <span class="tag">Apex</span>
+                            </div>
+                            <div class="projeto-card__links">
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver estudo de caso">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                    Case Study
+                                </a>
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver conceito no GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    Conceito
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- PROJETO 3: Placeholder para outro projeto seu -->
-                <article class="projeto-card" data-categorias="react">
-                    <div class="projeto-card__imagem-placeholder projeto3"></div>
-                    <div class="projeto-card__conteudo">
-                        <h3 class="projeto-card__titulo">Aplicativo de Tarefas React</h3>
-                        <p class="projeto-card__descricao">Aplicativo interativo de lista de tarefas (to-do) desenvolvido em React com Hooks, persistência no localStorage e filtros dinâmicos.</p>
-                        <div class="projeto-card__tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Hooks</span>
-                            <span class="tag">CSS Modules</span>
-                            <span class="tag">LocalStorage</span>
+                    <!-- Projeto 3 -->
+                    <article class="projeto-card" data-categorias="react">
+                        <div class="projeto-card__imagem projeto3">
+                            <div class="projeto-card__overlay">
+                                <span>Ver Detalhes</span>
+                            </div>
                         </div>
-                        <div class="projeto-card__links">
-                            <a href="#" class="link-icon" aria-label="Ver demonstração ao vivo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>
-                                Live Demo
-                            </a>
-                            <a href="#" class="link-icon" aria-label="Ver código no GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
-                                Código
-                            </a>
+                        <div class="projeto-card__conteudo">
+                            <h3 class="projeto-card__titulo">Task Manager App</h3>
+                            <p class="projeto-card__descricao">Aplicativo interativo de gerenciamento de tarefas com React Hooks, drag & drop, filtros e persistência em localStorage.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Hooks</span>
+                                <span class="tag">LocalStorage</span>
+                                <span class="tag">Styled Components</span>
+                            </div>
+                            <div class="projeto-card__links">
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver demonstração ao vivo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Demo
+                                </a>
+                                <a href="#" class="link-icon" target="_blank" aria-label="Ver código no GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    Código
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </div>
-            <div class="projetos__cta">
-                <p>Quer ver mais? Visite meu <a href="https://github.com/Felipemelo48" target="_blank" class="link-destaque">GitHub completo</a>.</p>
+                    </article>
+                </div>
+
+                <div class="projetos__cta">
+                    <p>Veja mais projetos no meu <a href="https://github.com/Felipemelo48" target="_blank" class="link-destaque">GitHub</a></p>
+                </div>
             </div>
         </section>
 
-        <!-- Seção Certificações (COM O CURSO DE SALESFORCE) -->
+        <!-- Seção Certificações -->
         <section id="certificacoes" class="secao">
-            <h2 class="secao__titulo">Certificações & Cursos</h2>
-            <div class="certificacoes__lista">
-                <article class="certificado-card">
-                    <div class="certificado-card__cabecalho">
-                        <h3 class="certificado-card__titulo">Administrador/Analista Salesforce</h3>
-                        <span class="certificado-card__badge">NOVO</span>
-                    </div>
-                    <p class="certificado-card__instituicao">Udemy | Instrutor: Vitor Nishida</p>
-                    <p class="certificado-card__descricao">Curso completo que abrange os fundamentos da plataforma Salesforce, incluindo <strong>customização de objetos, automação com Flows, gestão de dados, segurança, relatórios e dashboards</strong>. Esta formação complementa minhas habilidades de desenvolvimento full-stack para a criação de soluções empresariais integradas.</p>
-                    <div class="certificado-card__meta">
-                        <span class="tag">Salesforce Platform</span>
-                        <span class="tag">CRM</span>
-                        <span class="tag">Business Automation</span>
-                    </div>
-                </article>
+            <div class="container">
+                <h2 class="secao__titulo">Certificações & Cursos</h2>
+                <div class="certificacoes__grid">
+                    <!-- Certificação Salesforce -->
+                    <article class="certificado-card">
+                        <div class="certificado-card__cabecalho">
+                            <h3 class="certificado-card__titulo">Administrador/Analista Salesforce</h3>
+                            <span class="certificado-card__badge">NOVO</span>
+                        </div>
+                        <p class="certificado-card__instituicao">Udemy | Instrutor: Vitor Nishida</p>
+                        <p class="certificado-card__descricao">Curso completo abrangendo fundamentos da plataforma Salesforce: customização de objetos, automação com Flows, gestão de dados, segurança, relatórios e dashboards. Formação que complementa minhas habilidades de desenvolvimento para soluções empresariais integradas.</p>
+                        <div class="certificado-card__tags">
+                            <span class="tag">Salesforce Platform</span>
+                            <span class="tag">CRM</span>
+                            <span class="tag">Business Automation</span>
+                            <span class="tag">Data Management</span>
+                        </div>
+                    </article>
 
-                <!-- Adicione aqui outras certificações futuras seguindo o mesmo modelo -->
-                <article class="certificado-card">
-                    <div class="certificado-card__cabecalho">
-                        <h3 class="certificado-card__titulo">Desenvolvimento Web Full-Stack</h3>
-                    </div>
-                    <p class="certificado-card__instituicao">Auto-didata / Diversos Recursos</p>
-                    <p class="certificado-card__descricao">Aprendizado contínuo através de documentação oficial, projetos práticos e cursos online focados nas tecnologias modernas do ecossistema JavaScript e Python.</p>
-                    <div class="certificado-card__meta">
-                        <span class="tag">React</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </article>
+                    <!-- Outra Certificação -->
+                    <article class="certificado-card">
+                        <div class="certificado-card__cabecalho">
+                            <h3 class="certificado-card__titulo">Desenvolvimento Full-Stack</h3>
+                        </div>
+                        <p class="certificado-card__instituicao">Auto-didata / Projetos Práticos</p>
+                        <p class="certificado-card__descricao">Aprendizado contínuo através de documentação oficial, desenvolvimento de projetos reais e cursos focados nas tecnologias modernas do ecossistema JavaScript e Python.</p>
+                        <div class="certificado-card__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">JavaScript ES6+</span>
+                            <span class="tag">Git Workflow</span>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- Seção Contato -->
-        <section id="contato" class="secao secao--clara secao--contato">
-            <h2 class="secao__titulo">Vamos Trabalhar Juntos?</h2>
-            <p class="secao__subtitulo">Estou aberto a novas oportunidades, projetos freelance ou apenas uma conversa sobre tecnologia.</p>
-            
-            <div class="contato__container">
-                <form class="contato__form" id="formContato">
-                    <div class="form__grupo">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div class="form__grupo">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form__grupo">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="botao botao--primario botao--grande">Enviar Mensagem</button>
-                </form>
+        <section id="contato" class="secao secao--clara">
+            <div class="container">
+                <h2 class="secao__titulo">Vamos Conversar?</h2>
+                <p class="secao__subtitulo">Estou aberto a oportunidades, projetos freelance ou trocas de conhecimento</p>
 
-                <div class="contato__info">
-                    <h3>Outras formas de contato</h3>
-                    <ul class="contato__links">
-                        <li>
-                            <a href="mailto:seuemail@exemplo.com" class="link-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg>
-                                seuemail@exemplo.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Felipemelo48" target="_blank" class="link-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
-                                /Felipemelo48
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/seuperfil" target="_blank" class="link-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.432.568-.88 1.232-.88.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
-                                /seu-linkedin
-                            </a>
-                        </li>
-                    </ul>
+                <div class="contato__grid">
+                    <!-- Formulário -->
+                    <form class="contato__form" id="formContato">
+                        <div class="form__grupo">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                        </div>
+                        <div class="form__grupo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        </div>
+                        <div class="form__grupo">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Descreva sua ideia, projeto ou dúvida..."></textarea>
+                        </div>
+                        <button type="submit" class="botao botao--primario botao--grande">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+
+                    <!-- Informações -->
+                    <div class="contato__info">
+                        <h3>Outras Formas de Contato</h3>
+                        <ul class="contato__lista">
+                            <li>
+                                <a href="mailto:luizfelipedornelas@exemplo.com" class="link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    luizfelipedornelas@exemplo.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Felipemelo48" target="_blank" class="link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    /Felipemelo48
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/seuperfil" target="_blank" class="link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    /luizfelipedornelas
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -300,15 +387,23 @@
 
     <!-- Rodapé -->
     <footer class="rodape">
-        <div class="rodape__conteudo">
-            <p class="rodape__texto">© <span id="ano-atual">2025</span> Luiz Felipe Dornelas. Construído com dedicação.</p>
-            <p class="rodape__nota">Este portfólio é um projeto em constante evolução.</p>
+        <div class="container">
+            <div class="rodape__conteudo">
+                <p class="rodape__texto">
+                    © <span id="ano-atual">2025</span> Luiz Felipe Dornelas. Todos os direitos reservados.
+                </p>
+                <p class="rodape__nota">
+                    Desenvolvido com dedicação e código limpo.
+                </p>
+            </div>
         </div>
     </footer>
 
     <!-- Botão Voltar ao Topo -->
-    <button class="botao-topo" aria-label="Voltar ao topo da página">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></svg>
+    <button class="botao-topo" aria-label="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
     </button>
 </body>
 </html>
