@@ -1,62 +1,314 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    
+    <!-- Meta Tags para SEO e Compartilhamento -->
+    <title>Luiz Felipe Dornelas | Desenvolvedor Full-Stack</title>
+    <meta name="description" content="Portfólio de Luiz Felipe Dornelas. Desenvolvedor Full-Stack criando soluções web com React, Django, Python e Salesforce.">
+    <meta name="keywords" content="desenvolvedor, fullstack, react, django, python, salesforce, portfólio, programador">
+    
+    <!-- Fontes Google (Poppins para títulos, Inter para texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link para o CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Link para o JavaScript (com defer para carregar após o HTML) -->
+    <script src="script.js" defer></script>
+    
+    <!-- Favicon (adicione um arquivo favicon.ico na raiz do projeto depois) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>Luiz Felipe Dornelas</h1>
-        <nav>
-            <ul>
+    <!-- Cabeçalho / Navegação -->
+    <header class="cabecalho">
+        <nav class="cabecalho__nav">
+            <!-- Logo com seu nome -->
+            <a href="#inicio" class="cabecalho__logo">Luiz<span>Felipe</span></a>
+            
+            <!-- Menu de Navegação Principal -->
+            <ul class="cabecalho__menu">
+                <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#certificacoes">Certificações</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            
+            <!-- Botão para Modo Escuro/Claro (será ativado no JS depois) -->
+            <button class="botao-tema" aria-label="Alternar modo claro/escuro">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </button>
+
+            <!-- Botão do Menu Mobile (aparece apenas em telas pequenas) -->
+            <button class="cabecalho__botao-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>Sou estudante de Sistemas de Informação e apaixonado por tecnologia. Atualmente, desenvolvo projetos com React, Django e Firebase.</p>
-    </section>
+    <main>
+        <!-- Seção Hero / Início -->
+        <section id="inicio" class="hero">
+            <div class="hero__conteudo">
+                <h1 class="hero__titulo">Transformando ideias em <span class="destaque">soluções digitais</span></h1>
+                <p class="hero__subtitulo">Desenvolvedor Full-Stack com expertise em <strong>React</strong>, <strong>Django</strong> e agora expandindo para o ecossistema <strong>Salesforce</strong>.</p>
+                <div class="hero__botoes">
+                    <a href="#projetos" class="botao botao--primario">Ver Meus Projetos</a>
+                    <a href="#contato" class="botao botao--secundario">Entrar em Contato</a>
+                </div>
+            </div>
+            <div class="hero__ilustracao">
+                <!-- Você pode colocar uma imagem sua ou um SVG aqui depois -->
+                <div class="ilustracao-placeholder"></div>
+            </div>
+        </section>
 
-    <section id="habilidades">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>React.js</li>
-            <li>JavaScript</li>
-            <li>HTML & CSS</li>
-            <li>Python & Django</li>
-            <li>Banco de Dados</li>
-        </ul>
-    </section>
+        <!-- Seção Sobre -->
+        <section id="sobre" class="secao secao--clara">
+            <h2 class="secao__titulo">Sobre Mim</h2>
+            <div class="sobre__conteudo">
+                <div class="sobre__texto">
+                    <p>Olá! Sou o Luiz, um desenvolvedor apaixonado por resolver problemas através da tecnologia. Minha jornada começou com o desenvolvimento web tradicional (HTML, CSS, JS) e evoluiu para o desenvolvimento full-stack com <strong>React no front-end</strong> e <strong>Django/Python no back-end</strong>.</p>
+                    <p>Atualmente, estou expandindo meu conhecimento para o ecossistema <strong>Salesforce</strong>, completando a certificação de Administrador/Analista. Acredito que a combinação de habilidades de desenvolvimento com a compreensão da principal plataforma de CRM do mundo abre portas para criar soluções empresariais integradas e de alto impacto.</p>
+                    <p>Meu objetivo é construir aplicações que não apenas funcionem bem, mas que também entreguem uma experiência excepcional ao usuário e resolvam necessidades reais de negócio.</p>
+                </div>
+                <!-- Espaço reservado para uma foto sua futuramente -->
+                <div class="sobre__foto-placeholder"></div>
+            </div>
+        </section>
 
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="projeto">
-            <h3>Planner Digital</h3>
-            <p>Aplicação desenvolvida com React e Firebase para organização pessoal.</p>
+        <!-- Seção Habilidades -->
+        <section id="habilidades" class="secao">
+            <h2 class="secao__titulo">Habilidades & Tecnologias</h2>
+            <div class="habilidades__container">
+                <div class="habilidade-categoria">
+                    <h3>Front-End</h3>
+                    <div class="habilidade-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag tag--destaque">React.js</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="habilidade-categoria">
+                    <h3>Back-End & Banco de Dados</h3>
+                    <div class="habilidade-tags">
+                        <span class="tag tag--destaque">Python</span>
+                        <span class="tag tag--destaque">Django</span>
+                        <span class="tag">API REST</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+                <div class="habilidade-categoria">
+                    <h3>Plataformas & Ferramentas</h3>
+                    <div class="habilidade-tags">
+                        <span class="tag tag--nova">Salesforce</span>
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">Figma (Básico)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="secao secao--clara">
+            <h2 class="secao__titulo">Projetos em Destaque</h2>
+            <p class="secao__subtitulo">Uma seleção do meu trabalho prático. Clique em qualquer card para ver mais detalhes.</p>
+
+            <!-- Filtros de Tecnologia (serão ativados com JS depois) -->
+            <div class="filtros">
+                <button class="filtro filtro--ativo" data-filtro="todos">Todos</button>
+                <button class="filtro" data-filtro="react">React</button>
+                <button class="filtro" data-filtro="django">Django</button>
+                <button class="filtro" data-filtro="salesforce">Salesforce</button>
+            </div>
+
+            <div class="projetos__grid">
+                <!-- PROJETO 1: Placeholder para seu projeto React/Django -->
+                <article class="projeto-card" data-categorias="react django">
+                    <div class="projeto-card__imagem-placeholder projeto1"></div>
+                    <div class="projeto-card__conteudo">
+                        <h3 class="projeto-card__titulo">Sistema de Gerenciamento</h3>
+                        <p class="projeto-card__descricao">Aplicaçao full-stack com interface em React e API robusta em Django para gerenciar dados de forma eficiente.</p>
+                        <div class="projeto-card__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <div class="projeto-card__links">
+                            <a href="#" class="link-icon" aria-label="Ver demonstração ao vivo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="link-icon" aria-label="Ver código no GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 2: Placeholder para um Projeto Integrado com Salesforce -->
+                <article class="projeto-card" data-categorias="salesforce">
+                    <div class="projeto-card__imagem-placeholder projeto2"></div>
+                    <div class="projeto-card__conteudo">
+                        <h3 class="projeto-card__titulo">Integração Salesforce + Dashboard</h3>
+                        <p class="projeto-card__descricao">Dashboard conceitual que consome dados de uma API do Salesforce para visualizar métricas de CRM, demonstrando a integração entre sistemas.</p>
+                        <div class="projeto-card__tags">
+                            <span class="tag tag--nova">Salesforce</span>
+                            <span class="tag">React</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Apex</span>
+                        </div>
+                        <div class="projeto-card__links">
+                            <a href="#" class="link-icon" aria-label="Ver estudo de caso">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/><path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/></svg>
+                                Estudo de Caso
+                            </a>
+                            <a href="#" class="link-icon" aria-label="Ver conceito no GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+                                Conceito
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJETO 3: Placeholder para outro projeto seu -->
+                <article class="projeto-card" data-categorias="react">
+                    <div class="projeto-card__imagem-placeholder projeto3"></div>
+                    <div class="projeto-card__conteudo">
+                        <h3 class="projeto-card__titulo">Aplicativo de Tarefas React</h3>
+                        <p class="projeto-card__descricao">Aplicativo interativo de lista de tarefas (to-do) desenvolvido em React com Hooks, persistência no localStorage e filtros dinâmicos.</p>
+                        <div class="projeto-card__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Hooks</span>
+                            <span class="tag">CSS Modules</span>
+                            <span class="tag">LocalStorage</span>
+                        </div>
+                        <div class="projeto-card__links">
+                            <a href="#" class="link-icon" aria-label="Ver demonstração ao vivo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="link-icon" aria-label="Ver código no GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="projetos__cta">
+                <p>Quer ver mais? Visite meu <a href="https://github.com/Felipemelo48" target="_blank" class="link-destaque">GitHub completo</a>.</p>
+            </div>
+        </section>
+
+        <!-- Seção Certificações (COM O CURSO DE SALESFORCE) -->
+        <section id="certificacoes" class="secao">
+            <h2 class="secao__titulo">Certificações & Cursos</h2>
+            <div class="certificacoes__lista">
+                <article class="certificado-card">
+                    <div class="certificado-card__cabecalho">
+                        <h3 class="certificado-card__titulo">Administrador/Analista Salesforce</h3>
+                        <span class="certificado-card__badge">NOVO</span>
+                    </div>
+                    <p class="certificado-card__instituicao">Udemy | Instrutor: Vitor Nishida</p>
+                    <p class="certificado-card__descricao">Curso completo que abrange os fundamentos da plataforma Salesforce, incluindo <strong>customização de objetos, automação com Flows, gestão de dados, segurança, relatórios e dashboards</strong>. Esta formação complementa minhas habilidades de desenvolvimento full-stack para a criação de soluções empresariais integradas.</p>
+                    <div class="certificado-card__meta">
+                        <span class="tag">Salesforce Platform</span>
+                        <span class="tag">CRM</span>
+                        <span class="tag">Business Automation</span>
+                    </div>
+                </article>
+
+                <!-- Adicione aqui outras certificações futuras seguindo o mesmo modelo -->
+                <article class="certificado-card">
+                    <div class="certificado-card__cabecalho">
+                        <h3 class="certificado-card__titulo">Desenvolvimento Web Full-Stack</h3>
+                    </div>
+                    <p class="certificado-card__instituicao">Auto-didata / Diversos Recursos</p>
+                    <p class="certificado-card__descricao">Aprendizado contínuo através de documentação oficial, projetos práticos e cursos online focados nas tecnologias modernas do ecossistema JavaScript e Python.</p>
+                    <div class="certificado-card__meta">
+                        <span class="tag">React</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="secao secao--clara secao--contato">
+            <h2 class="secao__titulo">Vamos Trabalhar Juntos?</h2>
+            <p class="secao__subtitulo">Estou aberto a novas oportunidades, projetos freelance ou apenas uma conversa sobre tecnologia.</p>
+            
+            <div class="contato__container">
+                <form class="contato__form" id="formContato">
+                    <div class="form__grupo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form__grupo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form__grupo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="botao botao--primario botao--grande">Enviar Mensagem</button>
+                </form>
+
+                <div class="contato__info">
+                    <h3>Outras formas de contato</h3>
+                    <ul class="contato__links">
+                        <li>
+                            <a href="mailto:seuemail@exemplo.com" class="link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg>
+                                seuemail@exemplo.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Felipemelo48" target="_blank" class="link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+                                /Felipemelo48
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/seuperfil" target="_blank" class="link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.432.568-.88 1.232-.88.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+                                /seu-linkedin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="rodape__conteudo">
+            <p class="rodape__texto">© <span id="ano-atual">2025</span> Luiz Felipe Dornelas. Construído com dedicação.</p>
+            <p class="rodape__nota">Este portfólio é um projeto em constante evolução.</p>
         </div>
-        <div class="projeto">
-            <h3>App de Dieta</h3>
-            <p>Aplicação para controle alimentar utilizando React e Java.</p>
-        </div>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: <a href="mailto:luizfelipe@email.com">luizfelipe@email.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank">Meu LinkedIn</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Luiz Felipe Dornelas - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botão Voltar ao Topo -->
+    <button class="botao-topo" aria-label="Voltar ao topo da página">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></svg>
+    </button>
 </body>
 </html>
