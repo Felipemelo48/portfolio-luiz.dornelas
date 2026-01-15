@@ -2,9 +2,10 @@
 // CONFIGURAÇÕES INICIAIS E ELEMENTOS DO DOM
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Portfólio carregado! ✨');
+    console.log('🚀 Portfólio de Luiz Felipe carregado!');
 
     // --- Elementos Principais ---
+    const body = document.body;
     const botaoMenuMobile = document.querySelector('.cabecalho__botao-menu');
     const menuNavegacao = document.querySelector('.cabecalho__menu');
     const botaoTema = document.querySelector('.botao-tema');
@@ -13,21 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const filtrosProjetos = document.querySelectorAll('.filtro');
     const cardsProjeto = document.querySelectorAll('.projeto-card');
     const spanAnoAtual = document.getElementById('ano-atual');
+    const elementosDigitar = document.querySelectorAll('.digitar');
 
     // ============================================
     // 1. MENU MOBILE (Hambúrguer)
     // ============================================
     if (botaoMenuMobile && menuNavegacao) {
         botaoMenuMobile.addEventListener('click', function() {
-            // Alterna a classe 'ativo' no menu e no botão
-            menuNavegacao.classList.toggle('ativo');
+            const estaAberto = menuNavegacao.classList.toggle('ativo');
             botaoMenuMobile.classList.toggle('ativo');
-            
-            // Atualiza o atributo aria-expanded para acessibilidade
-            const estaAberto = menuNavegacao.classList.contains('ativo');
             botaoMenuMobile.setAttribute('aria-expanded', estaAberto);
             
-            // Opcional: Fecha o menu ao clicar em um link
+            // Fecha menu ao clicar em um link
             const linksMenu = menuNavegacao.querySelectorAll('a');
             linksMenu.forEach(link => {
                 link.addEventListener('click', () => {
@@ -43,53 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. CONTROLE DE TEMA (Claro/Escuro)
     // ============================================
     if (botaoTema) {
-        // Verifica a preferência salva no localStorage ou do sistema
+        // Verifica preferência salva ou do sistema
         const temaSalvo = localStorage.getItem('temaPortfolio');
         const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        // Aplica o tema salvo ou a preferência do sistema
+        // Aplica tema inicial
         if (temaSalvo === 'escuro' || (!temaSalvo && prefereEscuro)) {
-            document.body.classList.add('modo-escuro');
-            botaoTema.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71c0-1.69.53-3.26 1.438-4.56a.75.75 0 0 1 .12-.804zm2.5 1.378a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-5.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/>
-            </svg>`; // Ícone de sol (para voltar ao claro)
-        } else {
-            botaoTema.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7 7 0 1 0 14.53 10.53"/>
-            </svg>`; // Ícone de lua (para ir ao escuro)
+            body.classList.add('modo-escuro');
         }
 
-        // Evento de clique para alternar o tema
+        // Evento de clique para alternar
         botaoTema.addEventListener('click', function() {
-            const estaEscuro = document.body.classList.toggle('modo-escuro');
-            
-            // Atualiza o ícone do botão
-            if (estaEscuro) {
-                botaoTema.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71c0-1.69.53-3.26 1.438-4.56a.75.75 0 0 1 .12-.804zm2.5 1.378a.75.75 0 1 0 0 1.5.75.75 0 1 0 0-1.5m-5.5 0a.75.75 0 1 0 0 1.5.75.75 0 1 0 0-1.5"/>
-                </svg>`;
-                localStorage.setItem('temaPortfolio', 'escuro');
-            } else {
-                botaoTema.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7 7 0 1 0 14.53 10.53"/>
-                </svg>`;
-                localStorage.setItem('temaPortfolio', 'claro');
-            }
+            const estaEscuro = body.classList.toggle('modo-escuro');
+            localStorage.setItem('temaPortfolio', estaEscuro ? 'escuro' : 'claro');
+            console.log(`🌓 Tema alterado para: ${estaEscuro ? 'Escuro' : 'Claro'}`);
         });
     }
 
     // ============================================
-    // 3. FILTRO DE PROJETOS POR TECNOLOGIA
+    // 3. FILTRO DE PROJETOS
     // ============================================
     if (filtrosProjetos.length > 0 && cardsProjeto.length > 0) {
         filtrosProjetos.forEach(filtro => {
             filtro.addEventListener('click', function() {
-                // Remove a classe ativa de todos os filtros
+                // Atualiza filtro ativo
                 filtrosProjetos.forEach(f => f.classList.remove('filtro--ativo'));
-                // Adiciona a classe ativa no filtro clicado
                 this.classList.add('filtro--ativo');
                 
                 const categoriaSelecionada = this.getAttribute('data-filtro');
+                console.log(`🔍 Filtrando projetos por: ${categoriaSelecionada}`);
                 
                 // Filtra os projetos
                 cardsProjeto.forEach(card => {
@@ -97,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (categoriaSelecionada === 'todos' || categoriasCard.includes(categoriaSelecionada)) {
                         card.style.display = 'flex';
-                        // Pequena animação de fade in
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0)';
@@ -115,13 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
-    // 4. FORMULÁRIO DE CONTATO (Simulação)
+    // 4. FORMULÁRIO DE CONTATO
     // ============================================
     if (formularioContato) {
         formularioContato.addEventListener('submit', function(evento) {
-            evento.preventDefault(); // Impede o envio tradicional
+            evento.preventDefault();
             
-            // Coleta os dados do formulário
             const dadosFormulario = new FormData(formularioContato);
             const nome = dadosFormulario.get('nome');
             const email = dadosFormulario.get('email');
@@ -129,23 +107,21 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Validação básica
             if (!nome || !email || !mensagem) {
-                alert('Por favor, preencha todos os campos.');
+                alert('⚠️ Por favor, preencha todos os campos.');
                 return;
             }
             
-            // Simula o envio (em um projeto real, integraria com Formspree, EmailJS, etc.)
-            console.log('📨 Dados do formulário (simulação):', { nome, email, mensagem });
-            
-            // Feedback visual para o usuário
+            // Feedback visual
             const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
             const textoOriginal = botaoEnviar.textContent;
             
             botaoEnviar.textContent = 'Enviando...';
             botaoEnviar.disabled = true;
             
-            // Simula uma requisição assíncrona
+            // Simula envio (substitua por API real)
             setTimeout(() => {
-                alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso. Em breve entrarei em contato pelo e-mail ${email}.`);
+                console.log('📨 Mensagem enviada:', { nome, email, mensagem });
+                alert(`✅ Obrigado, ${nome}! Sua mensagem foi enviada.\nResponderei em breve para: ${email}`);
                 formularioContato.reset();
                 botaoEnviar.textContent = textoOriginal;
                 botaoEnviar.disabled = false;
@@ -157,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 5. BOTÃO "VOLTAR AO TOPO"
     // ============================================
     if (botaoTopo) {
-        // Mostra/esconde o botão baseado no scroll
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 botaoTopo.classList.add('visivel');
@@ -166,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Evento de clique para voltar ao topo suavemente
         botaoTopo.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -183,49 +157,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
-    // 7. ANIMAÇÃO DE DIGITAÇÃO NO HERO (Bônus)
+    // 7. ANIMAÇÃO DE DIGITAÇÃO (TEXTO DINÂMICO)
     // ============================================
-    const tituloHero = document.querySelector('.hero__titulo .destaque');
-    if (tituloHero && window.innerWidth > 768) {
-        const textos = ['soluções digitais', 'experiências web', 'sistemas integrados', 'produtos escaláveis'];
-        let indiceTexto = 0;
-        let indiceCaractere = 0;
-        let estaApagando = false;
-        let velocidade = 100; // ms por caractere
-        
-        function digitarTexto() {
-            const textoAtual = textos[indiceTexto];
+    if (elementosDigitar.length > 0) {
+        elementosDigitar.forEach(elemento => {
+            const textos = elemento.getAttribute('data-textos') 
+                ? JSON.parse(elemento.getAttribute('data-textos'))
+                : ['soluções digitais', 'experiências web', 'sistemas integrados', 'produtos escaláveis'];
             
-            if (!estaApagando) {
-                // Modo digitação
-                tituloHero.textContent = textoAtual.substring(0, indiceCaractere + 1);
-                indiceCaractere++;
+            let indiceTexto = 0;
+            let indiceCaractere = 0;
+            let estaApagando = false;
+            let velocidade = 100;
+            
+            function digitar() {
+                const textoAtual = textos[indiceTexto];
                 
-                if (indiceCaractere === textoAtual.length) {
-                    estaApagando = true;
-                    velocidade = 1000; // Pausa no final
+                if (!estaApagando) {
+                    elemento.textContent = textoAtual.substring(0, indiceCaractere + 1);
+                    indiceCaractere++;
+                    
+                    if (indiceCaractere === textoAtual.length) {
+                        estaApagando = true;
+                        velocidade = 1000;
+                    }
+                } else {
+                    elemento.textContent = textoAtual.substring(0, indiceCaractere - 1);
+                    indiceCaractere--;
+                    
+                    if (indiceCaractere === 0) {
+                        estaApagando = false;
+                        indiceTexto = (indiceTexto + 1) % textos.length;
+                        velocidade = 100;
+                    }
                 }
-            } else {
-                // Modo apagando
-                tituloHero.textContent = textoAtual.substring(0, indiceCaractere - 1);
-                indiceCaractere--;
                 
-                if (indiceCaractere === 0) {
-                    estaApagando = false;
-                    indiceTexto = (indiceTexto + 1) % textos.length;
-                    velocidade = 100;
-                }
+                setTimeout(digitar, velocidade);
             }
             
-            setTimeout(digitarTexto, velocidade);
-        }
-        
-        // Inicia a animação após um breve delay
-        setTimeout(digitarTexto, 1000);
+            // Inicia após 1 segundo
+            setTimeout(digitar, 1000);
+        });
     }
 
     // ============================================
-    // 8. ANIMAÇÃO DE APARECIMENTO SUAVE NAS SEÇÕES
+    // 8. ANIMAÇÃO DE APARECIMENTO SUAVE (Scroll)
     // ============================================
     const observerOpcoes = {
         root: null,
@@ -241,19 +217,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOpcoes);
     
-    // Observa todas as seções principais
+    // Observa seções principais
     document.querySelectorAll('section').forEach(secao => {
         secao.classList.add('oculto-transicao');
         observer.observe(secao);
     });
 
-    // Adiciona uma classe inicial para animação
-    document.body.classList.add('carregado');
+    // ============================================
+    // 9. VALIDAÇÃO DE FORMULÁRIO EM TEMPO REAL
+    // ============================================
+    const inputsForm = formularioContato ? formularioContato.querySelectorAll('input, textarea') : [];
+    inputsForm.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (!this.value.trim()) {
+                this.style.borderColor = 'var(--cor-erro)';
+            } else {
+                this.style.borderColor = 'var(--cor-sucesso)';
+            }
+        });
+        
+        input.addEventListener('input', function() {
+            this.style.borderColor = 'var(--cor-borda)';
+        });
+    });
+
+    // ============================================
+    // 10. CLIQUE EM CARDS DE PROJETO (Simulação)
+    // ============================================
+    cardsProjeto.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Não ativa se clicar em links dentro do card
+            if (!e.target.closest('a')) {
+                const titulo = this.querySelector('.projeto-card__titulo').textContent;
+                console.log(`🖱️ Card clicado: ${titulo}`);
+                // Aqui você pode abrir um modal ou redirecionar
+                // alert(`Detalhes do projeto: ${titulo}`);
+            }
+        });
+    });
+
+    // Adiciona classe inicial para animações
+    body.classList.add('carregado');
+    console.log('✅ Todas as funcionalidades foram inicializadas!');
 });
 
-// Adiciona esta regra CSS dinamicamente para a animação de aparecimento
-const estiloAnimacao = document.createElement('style');
-estiloAnimacao.textContent = `
+// ============================================
+// ESTILOS DINÂMICOS PARA ANIMAÇÕES
+// ============================================
+const estiloDinamico = document.createElement('style');
+estiloDinamico.textContent = `
     .oculto-transicao {
         opacity: 0;
         transform: translateY(30px);
@@ -265,8 +277,26 @@ estiloAnimacao.textContent = `
         transform: translateY(0);
     }
     
-    body.carregado * {
-        transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+    .carregado * {
+        transition: background-color 0.5s ease, 
+                    border-color 0.5s ease, 
+                    color 0.5s ease,
+                    transform 0.3s ease;
+    }
+    
+    .projeto-card {
+        transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease;
     }
 `;
-document.head.appendChild(estiloAnimacao);
+document.head.appendChild(estiloDinamico);
+
+// ============================================
+// DETECÇÃO DE REDIMENSIONAMENTO (Opcional)
+// ============================================
+let timeoutResize;
+window.addEventListener('resize', function() {
+    clearTimeout(timeoutResize);
+    timeoutResize = setTimeout(function() {
+        console.log(`📱 Janela redimensionada: ${window.innerWidth} x ${window.innerHeight}`);
+    }, 250);
+});
